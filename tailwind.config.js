@@ -12,7 +12,7 @@ export default {
         secondary: {
           DEFAULT: 'var(--secondary)',
           dark: 'var(--secondary-dark)',
-          light: 'var(--secondary-ligt)',
+          light: 'var(--secondary-light)',
         },
         base: {
           title: 'var(--base-title)',
