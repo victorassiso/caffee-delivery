@@ -4,14 +4,14 @@ import logo from '../assets/logo.svg'
 
 export function Header() {
   return (
-    <div className="flex items-center justify-between max-w-[1440px] py-8 px-40">
+    <div className="fixed flex w-full max-w-[1440px] justify-between px-40 py-8">
       <img src={logo} alt="Coffee Delivery" className="h-[40px]" />
       <div className="flex gap-3">
-        <div className="bg-secondary-light rounded-md flex items-center text-secondary-dark p-2">
+        <div className="flex items-center rounded-md bg-secondary-light p-2 text-secondary-dark">
           <MapPin color="var(--secondary)" weight="fill" />
           <span>Rio de Janeiro, RJ</span>
         </div>
-        <button className="bg-primary-light p-2 rounded-md felx items-center justify-center">
+        <button className="felx items-center justify-center rounded-md bg-primary-light p-2">
           <ShoppingCart
             color="var(--primary-dark)"
             weight="fill"

@@ -27,6 +27,9 @@ export default {
         background: 'var(--background)',
         white: 'var(--white)',
       },
+      backgroundImage: {
+        banner: '@/src/assets/background.sbg',
+      },
     },
   },
   plugins: [],

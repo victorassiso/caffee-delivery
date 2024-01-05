@@ -1,15 +1,9 @@
-import { Header } from './components/header'
-import { PrimaryButton } from './components/primary-button'
-import { SecondaryButton } from './components/secondary-button'
+import { RouterProvider } from 'react-router-dom'
+
+import { router } from './router'
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <PrimaryButton>Label</PrimaryButton>
-      <SecondaryButton>Remover</SecondaryButton>
-    </div>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
