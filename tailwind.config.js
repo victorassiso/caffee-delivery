@@ -31,6 +31,9 @@ export default {
         banner: '@/src/assets/background.sbg',
       },
     },
+    fontFamily: {
+      ballo2: ['"Baloo 2"', 'sans-serif'],
+    },
   },
   plugins: [],
 }
