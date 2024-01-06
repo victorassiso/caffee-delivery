@@ -4,7 +4,7 @@ import logo from '../assets/logo.svg'
 
 export function Header() {
   return (
-    <div className="fixed flex w-full max-w-[1440px] justify-between px-40 py-8">
+    <div className="fixed flex w-full max-w-[1440px] justify-between bg-background px-40 py-8">
       <img src={logo} alt="Coffee Delivery" className="h-[40px]" />
       <div className="flex gap-3">
         <div className="flex items-center rounded-md bg-secondary-light p-2 text-secondary-dark">
