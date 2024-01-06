@@ -1,4 +1,4 @@
-import { coffees } from '../data/products.json'
+import { coffees } from '../../../data/products.json'
 import { ProductCard } from './product-card'
 
 export function Products() {

@@ -1,6 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
-import bannerImg from '../assets/banner-img.svg'
+import bannerImg from '../../../assets/banner-img.svg'
 
 export function Banner() {
   return (

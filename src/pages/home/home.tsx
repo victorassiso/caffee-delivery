@@ -1,5 +1,5 @@
-import { Banner } from '../components/banner'
-import { Products } from '../components/products'
+import { Banner } from './components/banner'
+import { Products } from './components/products'
 
 export function Home() {
   return (
