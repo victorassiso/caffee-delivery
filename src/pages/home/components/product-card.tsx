@@ -1,6 +1,8 @@
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { ShoppingCart } from 'phosphor-react'
 
-interface ProductCard {
+import { QuantityCard } from '../../../components/quantity-card'
+
+interface ProductCardProps {
   id: string
   title: string
   description: string
@@ -9,7 +11,7 @@ interface ProductCard {
   image: string
 }
 
-export function ProductCard(product: ProductCard) {
+export function ProductCard(product: ProductCardProps) {
   const baseUrl = import.meta.env.BASE_URL
 
   return (
@@ -45,15 +47,7 @@ export function ProductCard(product: ProductCard) {
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="flex gap-1 rounded-md bg-base-button p-2">
-            <button className="text-color">
-              <Minus color="var(--secondary)" size={14} />
-            </button>
-            1
-            <button>
-              <Plus color="var(--secondary)" size={14} />
-            </button>
-          </div>
+          <QuantityCard quantity={0} />
           <button className="rounded-md bg-secondary-dark p-2">
             <ShoppingCart size={22} color="white" />
           </button>
