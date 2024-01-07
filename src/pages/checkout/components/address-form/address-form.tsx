@@ -4,7 +4,7 @@ import { Input } from './components/input'
 
 export function AddressForm() {
   return (
-    <div className="flex flex-col gap-8 bg-base-card p-10">
+    <div className="flex flex-col gap-8 rounded-md bg-base-card p-10">
       <div className="flex gap-2">
         <MapPinLine color="var(--primary-dark)" size={22} />
         <div className="flex flex-col leading-[130%]">

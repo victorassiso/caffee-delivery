@@ -1,6 +1,7 @@
 import expressoTradicional from '../../../public/images/coffees/expresso.png'
 import latte from '../../../public/images/coffees/latte.png'
 import { AddressForm } from './components/address-form/address-form'
+import { PaymentMethod } from './components/payment-method/payment-method'
 import { SelectedItemsCard } from './components/selected-items/selected-items-card'
 
 const items = [
@@ -29,7 +30,7 @@ export function Checkout() {
         </h2>
         <div className="mt-[0.9375rem] flex flex-col gap-3">
           <AddressForm />
-          <div className="bg-base-card p-10">b</div>
+          <PaymentMethod />
         </div>
       </div>
       <div className="">
