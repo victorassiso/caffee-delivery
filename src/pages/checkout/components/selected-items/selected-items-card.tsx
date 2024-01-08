@@ -1,23 +1,39 @@
-import { ICartItem } from '../../../../contexts/cart-context-provider'
-import { CartItem } from './cart-item'
+import { useContext } from 'react'
 
-interface SelectedItemsCardProps {
-  items: ICartItem[]
-}
+import { CartContext } from '../../../../contexts/cart-context-provider'
+import { CartItem, CartItemProps } from './cart-item'
 
-export function SelectedItemsCard({ items }: SelectedItemsCardProps) {
+export function SelectedItemsCard() {
+  const { products, cartState } = useContext(CartContext)
+
+  const productsInCart: CartItemProps[] = cartState.cart.map((item) => {
+    const product = products.find((product) => product.id === item.id)
+
+    if (!product) {
+      throw new Error('Invalid product.')
+    }
+
+    return {
+      ...product,
+      quantity: item.quantity,
+    }
+  })
+
+  const CartPrice = productsInCart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0,
+  )
+
   return (
     <div className="mt-[0.9375rem] w-[448px] rounded-bl-[44px] rounded-br-md rounded-tl-md rounded-tr-[44px] bg-base-card p-10">
-      {items.map((item) => (
-        <div key={item.id}>
-          <CartItem {...item} />
-        </div>
+      {productsInCart.map((productInCart) => (
+        <CartItem key={productInCart.id} {...productInCart} />
       ))}
 
       <div className="flex flex-col gap-3 leading-[130%] text-base-text">
         <div className="flex items-center justify-between">
           <span className="text-sm">Total de itens</span>
-          <span>R$ 29,70</span>
+          <span>R$ {CartPrice.toFixed(2)}</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-sm">Entrega</span>
@@ -25,7 +41,7 @@ export function SelectedItemsCard({ items }: SelectedItemsCardProps) {
         </div>
         <div className="flex items-center justify-between text-xl font-bold">
           <span className="">Total</span>
-          <span>R$ 33,20</span>
+          <span>R$ {(CartPrice + 3.5).toFixed(2)}</span>
         </div>
       </div>
 

@@ -1,12 +1,8 @@
-import { useContext } from 'react'
-
-import { CartContext } from '../../contexts/cart-context-provider'
 import { AddressForm } from './components/address-form/address-form'
 import { PaymentMethod } from './components/payment-method/payment-method'
 import { SelectedItemsCard } from './components/selected-items/selected-items-card'
 
 export function Checkout() {
-  const { cartState } = useContext(CartContext)
   return (
     <div className="mt-[104px] flex w-full flex-col items-center gap-8 px-[160px] py-10 xl:flex-row xl:items-start">
       <div className="w-full">
@@ -22,7 +18,7 @@ export function Checkout() {
         <h2 className="font-ballo2 text-lg font-bold leading-[130%] text-base-subtitle">
           Cafés selecionados
         </h2>
-        <SelectedItemsCard items={cartState.cart} />
+        <SelectedItemsCard />
       </div>
     </div>
   )
