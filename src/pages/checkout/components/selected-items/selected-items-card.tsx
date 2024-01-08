@@ -1,7 +1,8 @@
-import { SelectedItem, SelectedItemProps } from './selected-item'
+import { ICartItem } from '../../../../contexts/cart-context-provider'
+import { CartItem } from './cart-item'
 
 interface SelectedItemsCardProps {
-  items: SelectedItemProps[]
+  items: ICartItem[]
 }
 
 export function SelectedItemsCard({ items }: SelectedItemsCardProps) {
@@ -9,7 +10,7 @@ export function SelectedItemsCard({ items }: SelectedItemsCardProps) {
     <div className="mt-[0.9375rem] w-[448px] rounded-bl-[44px] rounded-br-md rounded-tl-md rounded-tr-[44px] bg-base-card p-10">
       {items.map((item) => (
         <div key={item.id}>
-          <SelectedItem {...item} />
+          <CartItem {...item} />
         </div>
       ))}
 
